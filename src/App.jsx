@@ -26,6 +26,7 @@ import './styles/footer.css';
 import './styles/components.css';
 import './styles/case-study.css';
 import './styles/editorial.css';
+import './styles/sage-theme.css';
 import { resolveProjectRoute } from './utils/projectRoutes';
 
 function currentLocation() {
