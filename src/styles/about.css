@@ -1,0 +1,135 @@
+/* ============================================================
+   ABOUT STYLES
+   ============================================================ */
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 5rem;
+  align-items: start;
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about__paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.about__para {
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  color: var(--color-text-secondary);
+  line-height: 1.78;
+}
+
+.about__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.about__detail {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+}
+.about__detail svg {
+  color: var(--color-warm-mid);
+  flex-shrink: 0;
+}
+.about__detail a {
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+}
+.about__detail a:hover {
+  color: var(--color-brown);
+}
+
+/* Stats card */
+.about__aside {
+  position: sticky;
+  top: 88px;
+}
+
+.about__card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.about__card-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1.25rem 0;
+}
+
+.about__card-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.about__card-label {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
+}
+
+.about__card-divider {
+  height: 1px;
+  background-color: var(--color-border-light);
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .about__grid {
+    grid-template-columns: 1fr 320px;
+    gap: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .about__aside {
+    position: static;
+  }
+  .about__card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .about__card-divider:nth-child(even) {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .about__card {
+    grid-template-columns: 1fr;
+  }
+  .about__card-divider {
+    display: block !important;
+  }
+}

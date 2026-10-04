@@ -1,0 +1,92 @@
+/* ============================================================
+   SKILLS STYLES — Prominent categories
+   ============================================================ */
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2.5rem;
+}
+
+.skills__category {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Large, prominent category heading */
+.skills__category-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--color-border-light);
+}
+
+.skills__category-title-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.skills__category-count {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-sage);
+  background: var(--color-sage-bg);
+  border: 1px solid var(--color-sage-muted);
+  padding: 0.15rem 0.5rem;
+  border-radius: 100px;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.skills__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skills__pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.42rem 0.9rem;
+  font-size: 0.84rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: 100px;
+  letter-spacing: 0.01em;
+  transition: background-color var(--transition-fast),
+              border-color var(--transition-fast),
+              color var(--transition-fast),
+              transform var(--transition-fast);
+  cursor: default;
+}
+
+.skills__pill:hover {
+  background-color: var(--color-sage-bg);
+  border-color: var(--color-sage-muted);
+  color: var(--color-sage-dark);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .skills__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem;
+  }
+  .skills__category-title-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+}

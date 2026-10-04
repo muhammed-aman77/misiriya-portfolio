@@ -1,0 +1,408 @@
+/* ============================================================
+   HERO — Typography-focused, editorial premium
+   ============================================================ */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 68px;
+  overflow: hidden;
+  background-color: var(--color-bg);
+}
+
+/* --- Background decoration --- */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero__bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--color-border-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border-light) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.45;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 0%, black 40%, transparent 100%);
+}
+
+.hero__bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.18;
+}
+.hero__bg-blob--1 {
+  width: 560px;
+  height: 560px;
+  background: var(--color-sage-muted);
+  top: -120px;
+  right: -80px;
+}
+.hero__bg-blob--2 {
+  width: 380px;
+  height: 380px;
+  background: var(--color-gold-muted);
+  bottom: 0;
+  left: -100px;
+}
+
+/* --- Layout --- */
+.hero__inner {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 4rem;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+  min-height: calc(100svh - 68px);
+}
+
+/* --- Content (left) --- */
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 640px;
+}
+
+.hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.hero__eyebrow-line {
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--color-sage-muted);
+  flex-shrink: 0;
+}
+
+/* --- Name — primary visual element --- */
+.hero__name {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8.5vw, 7.5rem);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: var(--color-text);
+}
+
+.hero__name-first {
+  display: block;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+.hero__name-last {
+  display: block;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* --- Divider line --- */
+.hero__divider {
+  width: 100%;
+  max-width: 360px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-sage-muted), transparent);
+  transform-origin: left;
+  margin-top: -0.5rem;
+}
+
+/* --- Directions --- */
+.hero__directions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+}
+
+.hero__direction {
+  font-size: clamp(0.88rem, 1.5vw, 1.05rem);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+
+.hero__direction-sep {
+  font-size: 1rem;
+  color: var(--color-sage-light);
+  font-weight: 300;
+}
+
+/* --- Tagline --- */
+.hero__tagline {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  max-width: 48ch;
+  border-left: 2px solid var(--color-sage-muted);
+  padding-left: 1rem;
+}
+
+/* --- Actions --- */
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* --- Decorative art (right side) --- */
+.hero__visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__art {
+  position: relative;
+  width: 380px;
+  height: 420px;
+  flex-shrink: 0;
+}
+
+/* Rings */
+.hero__art-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-light);
+}
+.hero__art-ring--lg {
+  width: 340px;
+  height: 340px;
+  top: 40px;
+  left: 20px;
+  border-color: var(--color-sage-muted);
+  opacity: 0.5;
+  animation: spin-slow 30s linear infinite;
+}
+.hero__art-ring--sm {
+  width: 180px;
+  height: 180px;
+  bottom: 30px;
+  right: 10px;
+  border-color: var(--color-gold-muted);
+  opacity: 0.6;
+  animation: spin-slow 22s linear infinite reverse;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Badge */
+.hero__art-badge {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-bg-dark);
+  color: var(--color-ivory);
+  border-radius: 100px;
+  padding: 0.35rem 1.1rem;
+  z-index: 2;
+}
+.hero__art-badge-text {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Horizontal lines */
+.hero__art-lines {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  opacity: 0.18;
+}
+.hero__art-lines span {
+  display: block;
+  height: 1px;
+  background: var(--color-text);
+}
+
+/* Floating cards */
+.hero__art-card {
+  position: absolute;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero__art-card--1 {
+  top: 80px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100px;
+}
+.hero__art-card-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-sage);
+}
+.hero__art-card-bar {
+  height: 5px;
+  border-radius: 3px;
+  background: var(--color-pale-beige);
+  width: 100%;
+}
+.hero__art-card-bar--short { width: 65%; }
+
+.hero__art-card--2 {
+  top: 120px;
+  right: 0;
+  text-align: right;
+}
+.hero__art-card--3 {
+  bottom: 80px;
+  left: 20px;
+}
+.hero__art-card-label {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  margin-bottom: 2px;
+}
+.hero__art-card-value {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+/* Floating words */
+.hero__art-word {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--color-text-muted);
+  opacity: 0.55;
+  letter-spacing: 0.02em;
+}
+.hero__art-word--1 { bottom: 40px; right: 20px; }
+.hero__art-word--2 { bottom: 140px; right: 30px; }
+
+/* --- Scroll indicator --- */
+.hero__scroll-cta {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  background: transparent;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+  z-index: 2;
+}
+.hero__scroll-cta:hover {
+  border-color: var(--color-sage-muted);
+  color: var(--color-text);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .hero__inner {
+    grid-template-columns: 1fr 340px;
+    gap: 3rem;
+  }
+  .hero__art {
+    width: 320px;
+    height: 360px;
+  }
+  .hero__art-ring--lg {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 860px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    align-items: start;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    min-height: unset;
+    gap: 3rem;
+  }
+  .hero__visual {
+    display: none; /* Hide art composition on smaller screens — text carries alone */
+  }
+  .hero__name {
+    font-size: clamp(3.2rem, 12vw, 5.5rem);
+  }
+  .hero__content {
+    max-width: 100%;
+  }
+  .hero__divider {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 60px;
+  }
+  .hero__name {
+    font-size: clamp(2.8rem, 13vw, 4rem);
+  }
+  .hero__actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero__scroll-cta {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__art-ring--lg,
+  .hero__art-ring--sm {
+    animation: none;
+  }
+}

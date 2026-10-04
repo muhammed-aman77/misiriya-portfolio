@@ -1,0 +1,131 @@
+/* ============================================================
+   RESUME STYLES
+   ============================================================ */
+
+.resume__inner {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 5rem;
+  align-items: center;
+}
+
+.resume__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.resume__note {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  line-height: 1.5;
+}
+
+.resume__note code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.78rem;
+  color: var(--color-brown);
+  background-color: var(--color-beige);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+}
+
+.resume__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Mock resume preview */
+.resume__preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resume__mock {
+  width: 100%;
+  max-width: 280px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transform: rotate(1.5deg);
+  transition: transform var(--transition-base);
+}
+.resume__preview:hover .resume__mock {
+  transform: rotate(0deg);
+}
+
+.resume__mock-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.resume__mock-name {
+  height: 14px;
+  width: 70%;
+  background-color: var(--color-beige);
+  border-radius: 3px;
+}
+.resume__mock-title {
+  height: 10px;
+  width: 50%;
+  background-color: var(--color-border-light);
+  border-radius: 3px;
+}
+.resume__mock-line {
+  height: 1px;
+  background-color: var(--color-border-light);
+}
+.resume__mock-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.resume__mock-label {
+  height: 8px;
+  width: 30%;
+  background-color: var(--color-beige);
+  border-radius: 3px;
+}
+.resume__mock-text {
+  height: 8px;
+  width: 100%;
+  background-color: var(--color-border-light);
+  border-radius: 3px;
+}
+.resume__mock-text--short {
+  width: 65%;
+}
+.resume__mock-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+}
+.resume__mock-pill {
+  height: 20px;
+  width: 52px;
+  background-color: var(--color-beige);
+  border-radius: 100px;
+}
+
+@media (max-width: 900px) {
+  .resume__inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .resume__preview {
+    order: -1;
+  }
+}

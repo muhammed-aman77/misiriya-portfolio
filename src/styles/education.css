@@ -1,0 +1,155 @@
+/* ============================================================
+   EDUCATION — Editorial 3-column timeline
+   ============================================================ */
+
+.edu-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.edu-item {
+  display: grid;
+  grid-template-columns: 140px 40px 1fr;
+  gap: 0 1.5rem;
+  align-items: start;
+  min-height: 130px;
+}
+.edu-item--last {
+  min-height: unset;
+}
+
+/* --- Left: year column --- */
+.edu-item__aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+  padding-top: 0.3rem;
+  text-align: right;
+}
+
+.edu-item__year {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+
+.edu-item__current-badge {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  background: var(--color-sage-bg);
+  border: 1px solid var(--color-sage-muted);
+  padding: 0.18rem 0.55rem;
+  border-radius: 100px;
+}
+
+/* --- Center: connector --- */
+.edu-item__connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edu-item__dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+  transition: border-color var(--transition-fast);
+}
+.edu-item--current .edu-item__dot {
+  background: var(--color-sage);
+  border-color: var(--color-sage);
+  box-shadow: 0 0 0 4px var(--color-sage-bg);
+}
+
+.edu-item__line {
+  width: 1px;
+  flex: 1;
+  background: var(--color-border-light);
+  margin: 6px 0;
+  min-height: 60px;
+}
+
+/* --- Right: content --- */
+.edu-item__content {
+  padding-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.edu-item--last .edu-item__content {
+  padding-bottom: 0;
+}
+
+.edu-item__degree {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.edu-item__institution {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+.edu-item__location {
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.edu-item__university {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.edu-item__grade {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.edu-item__grade-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.edu-item__grade-value {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-sage-dark);
+  background: var(--color-sage-bg);
+  border: 1px solid var(--color-sage-muted);
+  padding: 0.2rem 0.65rem;
+  border-radius: 100px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .edu-item {
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 0 1rem;
+  }
+  .edu-item__aside {
+    display: none;
+  }
+  .edu-item__degree {
+    font-size: 1.1rem;
+  }
+}
